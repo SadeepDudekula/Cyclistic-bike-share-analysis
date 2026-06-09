@@ -1,0 +1,118 @@
+CYCLISTIC BIKE SHARE ANALYSIS - DOCUMENTATION
+==============================================
+Analyst: Sadeep Dudekula
+Date: June 2026
+Tool: Python, SQL Server (SSMS), Tableau Public
+
+==============================================
+PHASE 1 - ASK
+==============================================
+Business Task:
+Analyze how annual members and casual riders use 
+Cyclistic bikes differently to help design a 
+marketing strategy to convert casual riders 
+into annual members.
+
+Stakeholders:
+- Lily Moreno (Director of Marketing)
+- Cyclistic Executive Team
+
+==============================================
+PHASE 2 - PREPARE
+==============================================
+Data Source: divvy-tripdata.s3.amazonaws.com
+Period: May 2025 - April 2026 (12 months)
+Files Downloaded: 12 ZIP files
+Combined using Python into: cyclistic_combined.csv
+Total rows after combining: 6,199,911
+Columns: 13
+
+Data Limitations:
+- No personally identifiable information
+- Cannot link pass purchases to individuals
+
+==============================================
+PHASE 3 - PROCESS (CLEANING)
+==============================================
+Tool Used: SQL Server Management Studio
+Database: cyclistic_db
+Raw Table: bike_trips
+Clean Table: bike_trips_clean
+
+Cleaning Steps:
+1. Removed NULL start_station_name rows
+2. Removed NULL end_station_name rows
+3. Removed rides under 1 minute (test rides)
+4. Removed rides over 1440 minutes (24 hours)
+5. Added ride_length column (minutes)
+6. Added day_of_week column
+7. Added month column
+
+Cleaning Results:
+- Raw rows: 6,199,911
+- Clean rows: 4,100,000
+- Removed: ~2,099,911 rows
+
+NULL Values Found:
+- start_station_name: 1,319,105 nulls
+- end_station_name: 1,387,299 nulls
+
+==============================================
+PHASE 4 - ANALYZE
+==============================================
+Key Findings:
+
+FINDING 1 - Ride Frequency by Day:
+- Casual riders peak on Saturday & Sunday
+- Members peak on Tuesday, Wednesday & Thursday
+- Conclusion: Members = commuters, Casual = leisure
+
+FINDING 2 - Ride Frequency by Month:
+- Casual riders peak in May (249,843 rides)
+- Members peak in August & September (~290,000)
+- Both groups ride less in winter months
+
+FINDING 3 - Total Rides Split:
+- Members: 2,642,135 rides (64%)
+- Casual: 1,458,808 rides (36%)
+
+FINDING 4 - Average Ride Duration:
+- Casual riders: 19.8 minutes average
+- Members: 11.8 minutes average
+- Casuals ride longer per trip
+
+FINDING 5 - Bike Type Preference:
+- Both groups use classic & electric similarly
+- Casual riders slightly prefer electric bikes
+- Members slightly prefer classic bikes
+
+==============================================
+PHASE 5 - SHARE
+==============================================
+Tool Used: Tableau Public
+Dashboard: Cyclistic Bike Share Analysis 2026
+Link: (ADD YOUR TABLEAU LINK HERE)
+
+Visualizations Created:
+1. Total Rides Comparison (Pie Chart)
+2. Rides by Day of Week (Bar Chart)
+3. Rides by Month (Bar Chart)
+4. Bike Type Preference (Bar Chart)
+KPI Cards: Total Rides, Avg Casual Duration, 
+           Avg Member Duration
+
+==============================================
+PHASE 6 - ACT (RECOMMENDATIONS)
+==============================================
+1. Weekend Membership Plan:
+   Introduce weekend-only membership at lower 
+   price to attract casual leisure riders
+
+2. Summer Campaign:
+   Launch 3-month summer membership in April 
+   targeting casual riders before peak season
+
+3. Targeted Digital Advertising:
+   Run ads at parks, tourist spots and cycling 
+   routes on weekends highlighting electric 
+   bike benefits
