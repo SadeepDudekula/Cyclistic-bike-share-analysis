@@ -21,8 +21,8 @@ differences between casual riders and annual members.
 2. Summer 3-month membership campaign launching April
 3. Targeted digital ads at parks and cycling routes
 
-## Dashboard
-[View Interactive Tableau Dashboard](https://public.tableau.com/views/cyclisticanalysis_17799312243350/Dashboard1)
+## Dashboard Link
+(https://public.tableau.com/views/cyclisticanalysis_17799312243350/Dashboard1)
 
 ## About Me
 I am Sadeep Dudekula, a recent B.Tech graduate 
